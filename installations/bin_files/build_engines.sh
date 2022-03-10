@@ -27,27 +27,38 @@ fi
 a=1
 success=""
 failed=""
-while [ $a -lt 4 ]
+while [ $a -lt 7 ]
 do
     echo "generating engine for $a"
 
     if [ "$a" -eq 1 ]
     then
-        b=engine_depth128.trt       
+        b=engine_depth128.trt
+        trtexec --onnx=./generate/$a.bin --int8 --fp16 --calib=./generate/$a.cache --verbose --useDLACore=0 --allowGPUFallback  --saveEngine=/usr/local/bin/data/$b --workspace=$1       
     fi
     if [ "$a" -eq 2 ]
     then
         b=engine_floor.trt 
+        trtexec --onnx=./generate/$a.bin --int8 --fp16 --calib=./generate/$a.cache --verbose --useDLACore=1 --allowGPUFallback  --saveEngine=/usr/local/bin/data/$b --workspace=$1
     fi
     if [ "$a" -eq 3 ]
     then
         b=engine_track.trt
+        trtexec --onnx=./generate/$a.bin --fp16 --batch=1 --verbose --saveEngine=/usr/local/bin/data/$b --workspace=$1
     fi
-    if [ "$a" -lt 3 ]
+    if [ "$a" -eq 4 ]
     then
-        d=`expr $a - 1`
-        trtexec --onnx=./generate/$a.bin --int8 --fp16 --calib=./generate/$a.cache --verbose --useDLACore=$d --allowGPUFallback  --saveEngine=/usr/local/bin/data/$b --workspace=$1
-    else
+        b=engine_depth384.trt
+        trtexec --onnx=./generate/$a.bin --int8 --fp16 --calib=./generate/$a.cache --verbose --useDLACore=0 --allowGPUFallback  --saveEngine=/usr/local/bin/data/$b --workspace=$1       
+    fi
+    if [ "$a" -eq 5 ]
+    then
+        b=engine_hqdec.trt
+        trtexec --onnx=./generate/$a.bin --fp16 --batch=1 --verbose --saveEngine=/usr/local/bin/data/$b --workspace=$1
+    fi
+    if [ "$a" -eq 6 ]
+    then
+        b=dec1.trt
         trtexec --onnx=./generate/$a.bin --fp16 --batch=1 --verbose --saveEngine=/usr/local/bin/data/$b --workspace=$1
     fi
 

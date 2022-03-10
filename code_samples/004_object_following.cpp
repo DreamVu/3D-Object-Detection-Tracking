@@ -1,24 +1,24 @@
 /*
 
-CODE SAMPLE # 002: People Following
-This code sample will center on the person being tracked and follow him
+CODE SAMPLE # 004: Object following panorama
+This code sample will center on the object being tracked and follow him
 
 
 >>>>>> Compile this code using the following command....
 
 
-g++ 002_people_following.cpp /usr/src/tensorrt/bin/common/logger.o  ../lib/libPAL.so  ../lib/libPAL_DE.so ../lib/libPAL_DEPTH_128.so  ../lib/libPAL_DEPTH_HQ.so ../lib/libPAL_Track.so `pkg-config --libs --cflags opencv python3 libusb-1.0`   -O3  -o 002_people_following.out -I../include/ -lv4l2 -lpthread -lcudart -L/usr/local/cuda/lib64 -lnvinfer -I../../monolith/inc -w -std=c++11
+g++ 004_object_following.cpp /usr/src/tensorrt/bin/common/logger.o  ../lib/libPAL.so  ../lib/libPAL_DE.so ../lib/libPAL_DEPTH_128.so  ../lib/libPAL_DEPTH_HQ.so ../lib/libPAL_Track.so `pkg-config --libs --cflags opencv python3 libusb-1.0`   -O3  -o 004_object_following.out -I../include/ -lv4l2 -lpthread -lcudart -L/usr/local/cuda/lib64 -lnvinfer -I../../monolith/inc -w -std=c++11
 
 
 >>>>>> Execute the binary file by typing the following command...
 
 
-./002_people_following.out
+./004_object_following.out
 
 
 >>>>>> KEYBOARD CONTROLS:
 
-       ESC key closes the window
+ESC key closes the window
        
 
 */
@@ -64,11 +64,11 @@ bool is_number(const std::string& s)
 int main( int argc, char** argv )
 {
 
-    namedWindow( "PAL People Following", WINDOW_NORMAL ); // Create a window for display.
+    namedWindow( "PAL Object Following", WINDOW_NORMAL ); // Create a window for display.
     
-    int width, height, camera_index = -1, model_id = 0;
+    int width, height, camera_index = -1, model_id = 1;
 	bool EnableDepth = true;
-    PAL::Mode mode = PAL::Mode::FOLLOWING;
+    PAL::Mode mode = PAL::Mode::OBJECT_FOLLOWING;
 
     if(PAL::Init(width, height, camera_index, EnableDepth, model_id, &mode) != PAL::SUCCESS) //Connect to the PAL camera
     {
@@ -88,7 +88,7 @@ int main( int argc, char** argv )
     //width and height are the dimensions of each panorama.
     //Each of the panoramas are displayed at one fourth their original resolution.
     //Since the panoramas are vertically stacked, the window height should be twice of 1/4th height
-    resizeWindow("PAL People Following", width, height);
+    resizeWindow("PAL Object Following", width, height);
     
     int key = ' ';
     
@@ -97,7 +97,7 @@ int main( int argc, char** argv )
     Mat output = cv::Mat::zeros(height, width, CV_8UC3);
     
     //Display the concatenated image
-    imshow( "PAL People Following", output);
+    imshow( "PAL Object Following", output);
     
     //27 = esc key. Run the loop until the ESC key is pressed
 
@@ -108,13 +108,12 @@ int main( int argc, char** argv )
         data = PAL::GrabTrackingData();
 
         cv::Mat output = data.left;
-        
+
         //Display the concatenated image
-        imshow( "PAL People Following", output);  
+        imshow( "PAL Object Following", output);  
         
         //Wait for the keypress - with a timeout of 1 ms
         key = waitKey(1) & 255;
-
 
         if (key == 'i' || key == 'I')
         {

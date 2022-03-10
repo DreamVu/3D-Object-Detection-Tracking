@@ -92,9 +92,9 @@ int main(int argc, char **argv)
 	leftpub1 = it.advertise("/dreamvu/pal/tracking/get/left", 1);		
     ros::Subscriber id_sub = nh.subscribe("/dreamvu/pal/set/id", 1, set_id);
     
-	int width, height, camera_index = -1, model_id = 0;
+	int width, height, camera_index = -1, model_id = 1;
 	bool EnableDepth = true;
-    PAL::Mode mode = PAL::Mode::FOLLOWING;
+    PAL::Mode mode = PAL::Mode::OBJECT_FOLLOWING;
 
     if(PAL::Init(width, height, camera_index, EnableDepth, model_id, &mode) != PAL::SUCCESS) //Connect to the PAL camera
     {
@@ -138,7 +138,7 @@ int main(int argc, char **argv)
         
 		if (subnumber > 0)
 		{
-        	data1 = GrabTrackingData();	
+        	data1 = GrabTrackingData();		
 		}
 
 		if (left1Subnumber > 0)

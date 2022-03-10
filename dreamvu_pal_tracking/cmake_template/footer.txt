@@ -23,3 +23,15 @@ target_link_libraries(tracker ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_L
 add_executable(follower /usr/src/tensorrt/bin/common/logger.o src/following_node.cpp )
 add_dependencies(follower ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(follower ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_LIBRARIES} ${PAL_LIBRARY})
+
+add_executable(object_tracker /usr/src/tensorrt/bin/common/logger.o src/tracking_objects_node.cpp )
+add_dependencies(object_tracker ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(object_tracker ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_LIBRARIES} ${PAL_LIBRARY})
+
+add_executable(object_follower /usr/src/tensorrt/bin/common/logger.o src/following_objects_node.cpp )
+add_dependencies(object_follower ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(object_follower ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_LIBRARIES} ${PAL_LIBRARY})
+
+add_executable(object_detection /usr/src/tensorrt/bin/common/logger.o src/detection_objects_node.cpp )
+add_dependencies(object_detection ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(object_detection ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_LIBRARIES} ${PAL_LIBRARY})

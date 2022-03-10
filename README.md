@@ -1,37 +1,53 @@
-# SDK-Tutorials and Explorer 
+# 3D Object Detection and Tracking 
+The software provides 3D object detection and tracking using [PAL USB](https://dreamvu.com/pal-usb/). PAL- USB is the only single sensor omnidirectional vision system to provide 360° stereoscopic sensing with depth perception. 
 
-## PRE-REQUIREMENT: Install OpenCV and OpenCV-contrib modules
-	1. Open docs/PAL Documentation.pdf file
-	
-	2. Follow the instructions as mentioned in the section 3.1 of the pdf file
+Please follow the instructions given below on any of the Nvidia Jetson embedded boards with Jetpack 4.6 to install the software.
 
-	
-## Install other dependencies and Compile the SDK Tutorials - This section is same as 3.2 in the pdf file
-1. Go to installations folder and Change the install bash scripts file permissions
-```
-$ cd installations && chmod +x ./*.sh
-```
+## Step 1. Clone the repository 
+-     sudo apt-get install git-lfs
+      git clone -b PAL --single-branch https://github.com/DreamVu/3D-Object-Detection-Tracking.git
+      cd 3D-Object-Detection-Tracking
+      git lfs pull
+      
+## Step 2. Installing Dependencies 
+Confirm the following dependencies. These are must have to proceed further
 
-2. Run install.sh
-```
-$ sudo ./install.sh
-```
+- ### Jetpack 4.6
 
-## Run Explorer
-1. Open the Explorer folder
-```
-$ cd Explorer
-```
+- ### CUDA enabled OpenCV 4.4.0 and OpenCV Contrib 4.4.0 libraries. 
+  Follow these steps to install the required OpenCV dependencies. 
+-      cd installations
+       chmod +x ./*.sh
+       sudo ./opencv.sh
 
-2. Change the Explorer file permissions
-```
-$ chmod +x ./Explorer
-```
+- ### Python 3.6 libraries (pytorch, torchvision, numpy, PIL, etc.)
 
-3. Run
-```
-$ ./Explorer
-```
+## Step 3. Installing PAL USB SDK
+      cd installations
+      chmod +x ./*.sh
+      ./install.sh arg1 arg2
+
+  - arg1: It can be either 0, 1 or can be skipped.  On selecting 1, installation will build the whole software based on the particular Nvidia Jetson architecture and will enable higher performance. This may take a few hours to complete the installation. On selecting 0, it will quickly build the software by using some of the pre-configured libraries provided. If arg1 is skipped, then arg2 must also be skipped.
+
+  - arg2:  If the arg1 is 1, then the second argument takes in the amount of RAM the process will use during the build of the software in MBs. Following are the recommended values for different Nvidia Jetson architectures.
+            For Jetson Xavier NX arg2: 3500
+            For Jetson Xavier AGX arg2: 8000
+            For Jetson Nano arg2: 1000
+            
+Once complete please reboot the system.
+
+## Step 4. Installing Camera Data File 
+The data files are delivered along with the purchase of the PAL USB camera. In case you have not received them, please request for the files by filling out a [form](https://support.dreamvu.com/portal/en/newticket)
+
+      chmod +x setup.sh
+      sudo ./setup.sh
 
 
+## Documentation 
+For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the [Evaluation Manual](https://docs.google.com/document/d/e/2PACX-1vSHmm4eHTxWZ0G1LhdJgI0NANms3ProJZyiBbBw7GNlKyMVQY6Wuw4FEvB9tUM0FuCK74i0AyEv25WG/pub)
 
+## Support 
+If you need help or more informations check our [Help Center](https://support.dreamvu.com/portal/en/home) or join our [Community](https://support.dreamvu.com/portal/en/community/dreamvu-inc) or you can email us directly at support@dreamvu.com 
+
+## Contributing
+Feel free to open an issue if you find a bug, or a pull request for bug fixes, features or other improvements.

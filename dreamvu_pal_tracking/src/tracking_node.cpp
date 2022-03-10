@@ -82,9 +82,11 @@ int main(int argc, char **argv)
 	//Creating all the publishers
 	leftpub1 = it.advertise("/dreamvu/pal/tracking/get/left", 1);		
 
-	int width, height;
+	int width, height, camera_index = -1, model_id = 0;
+	bool EnableDepth = true;
     PAL::Mode mode = PAL::Mode::TRACKING;
-    if(PAL::Init(width, height,-1, &mode) != PAL::SUCCESS) //Connect to the PAL camera
+
+    if(PAL::Init(width, height, camera_index, EnableDepth, model_id, &mode) != PAL::SUCCESS) //Connect to the PAL camera
     {
         printf("Init failed\n");
         return 1;
@@ -126,12 +128,7 @@ int main(int argc, char **argv)
         
 		if (subnumber > 0)
 		{
-			ros::WallTime t1 = ros::WallTime::now();
-
-            data1 = GrabTrackingData();
-                       
-			ros::WallTime t2 = ros::WallTime::now();						
-			//ROS_INFO_STREAM("Grab time (ms): " << (t2 - t1).toNSec()*1e-6);					
+            data1 = GrabTrackingData();			
 		}
 
 		if (left1Subnumber > 0)

@@ -66,6 +66,9 @@ namespace PAL
         TRACKING,
         SGBM,
         FOLLOWING,
+        OBJECT_TRACKING,
+        OBJECT_FOLLOWING,
+        OBJECT_DETECTION,
     };
 
     enum States
@@ -82,7 +85,10 @@ namespace PAL
             timeval timestamp;
             int iterations;
 
-            Common():iterations(0){}
+            Common():iterations(0)
+            {
+                gettimeofday(&timestamp, NULL);
+            }
         };
 
         struct Camera : Common
@@ -129,6 +135,7 @@ namespace PAL
             PAL::BoundingBox boxes; 
 
             float t_score;
+            float t_label;
             Loc3D locations_3d;
         };
 

@@ -25,8 +25,9 @@ namespace PAL
         FOV = 0x10000,
 		PROJECTION = 0x20000,
 		DISPARITY_COMPUTATION = 0x40000,
-		CAMERA_HEIGHT = 0x80000,		
-		ALL = 0xFFFFF,
+		CAMERA_HEIGHT = 0x80000,
+		FD = 0x100000,		
+		ALL = 0x1FFFFF,
 		
 		ODOA_DEPTHTHRESH = 0x400000,
 		ODOA_DEPTHSIGMA = 0x800000,
@@ -214,6 +215,7 @@ namespace PAL
 		//height of camera centre from floor in cm 
 		int camera_height;
 		
+		bool fd;
 
         static const int MAX_BRIGHTNESS = 15;
 		static const int MIN_BRIGHTNESS = -15;
@@ -265,7 +267,9 @@ namespace PAL
 		static const Projection DEFAULT_PROJECTION = PERSPECTIVE;
 		static const DisparityComputation DEFAULT_COMPUTATION = HIGH_QUALITY_A;
 
+
 		static const int DEFAULT_CAMERA_HEIGHT = 100;
+		static const bool DEFAULT_FD = true;
 
 		CameraProperties() :
 			brightness           (DEFAULT_BRIGHTNESS),
@@ -289,8 +293,8 @@ namespace PAL
 			fov_end              (DEFAULT_FOV_END),
 			projection           (DEFAULT_PROJECTION),
 			computation          (DEFAULT_COMPUTATION),
-			camera_height	     (DEFAULT_CAMERA_HEIGHT)			
-
+			camera_height	     (DEFAULT_CAMERA_HEIGHT),			
+			fd 					 (DEFAULT_FD)
 			//odoa_params.depth_context_threshold (DEFAULT_DEPTH_THRESHOLD),
 			//odoa_params.depth_context_sigma     (DEFAULT_DEPTH_SIGMA),
 			//odoa_params.stereo_threshold        (DEFAULT_STEREO_THRESHOLD),

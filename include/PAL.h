@@ -15,7 +15,7 @@ namespace PAL
 
 	//Initializes the PAL API
 	//returns SUCCESS/FAILURE etc.
-	PAL::Acknowledgement Init(int& panoramaWidth, int& panoramaHeight, int cameraIndex = -1, void* arg=nullptr);
+	PAL::Acknowledgement Init(int& panoramaWidth, int& panoramaHeight, int cameraIndex = -1, bool EnableDepth = true, int model_num = 1, void* arg=nullptr);
 	
 
 	//This is a blocking call, waits till all the pending depth / disparity computations are finished and returns.
@@ -112,6 +112,7 @@ namespace PAL
 
 	bool SavePointCloud(const char* fileName, cv::Mat pcMat);bool SavePointCloud(const char* fileName, cv::Mat pcMat);
 	PAL::Data::TrackingResults GrabTrackingData();
+	PAL::Data::TrackingResults GrabDetectionData();
 
 	void SetTrackID(int id);
 }

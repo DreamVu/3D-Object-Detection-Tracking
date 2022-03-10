@@ -26,9 +26,6 @@
 
 #include "PAL.h"
 
-#include <std_msgs/Int32.h>
-
-#include <sys/time.h>
 
 using namespace std;
 using namespace cv;
@@ -74,28 +71,20 @@ void publishimage(cv::Mat imgmat, image_transport::Publisher &pub, string encodi
 	pub.publish(imgmsg);
 }
 
-void set_id(const std_msgs::Int32& msg)
-{
-    int id = msg.data;
-    PAL::SetTrackID(id);
-}
-
 int main(int argc, char **argv)
 {
 	
-	ros::init(argc, argv, "following_node");
+	ros::init(argc, argv, "tracking_node");
 
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
 
 	//Creating all the publishers
 	leftpub1 = it.advertise("/dreamvu/pal/tracking/get/left", 1);		
-    ros::Subscriber id_sub = nh.subscribe("/dreamvu/pal/set/id", 1, set_id);
-    
-	int width, height, camera_index = -1, model_id = 0;
-	bool EnableDepth = true;
-    PAL::Mode mode = PAL::Mode::FOLLOWING;
 
+	int width, height, camera_index = -1, model_id = 1;
+	bool EnableDepth = true;
+    PAL::Mode mode = PAL::Mode::OBJECT_TRACKING;
     if(PAL::Init(width, height, camera_index, EnableDepth, model_id, &mode) != PAL::SUCCESS) //Connect to the PAL camera
     {
         printf("Init failed\n");
@@ -138,7 +127,7 @@ int main(int argc, char **argv)
         
 		if (subnumber > 0)
 		{
-        	data1 = GrabTrackingData();	
+            data1 = GrabTrackingData();
 		}
 
 		if (left1Subnumber > 0)
