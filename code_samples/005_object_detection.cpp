@@ -81,7 +81,7 @@ int main( int argc, char** argv )
 
     while(key != 27)
     {
-        PAL::Data::detectionResults data;
+        PAL::Data::TrackingResults data;
         data = PAL::GrabDetectionData();
 
         cv::Mat output = data.left;
