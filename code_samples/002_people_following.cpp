@@ -92,7 +92,8 @@ int main( int argc, char** argv )
     
     int key = ' ';
     
-    printf("Press ESC to close the window.\n");
+    printf("\nPress ESC to close the window.\n");
+    printf("Press i/I to enter the id you want to follow.\n");
 
     Mat output = cv::Mat::zeros(height, width, CV_8UC3);
     
