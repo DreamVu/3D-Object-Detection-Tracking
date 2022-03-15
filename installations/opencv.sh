@@ -11,7 +11,7 @@ sudo apt-get install -y ffmpeg
 
 sudo mkdir -p /usr/local/lib/pkgconfig/
 sudo cp opencv.pc /usr/local/lib/pkgconfig/
-
+sudo chown -R $USER:$USER /usr/local/lib/pkgconfig/opencv.pc
 
 cd ~
 wget -O opencv.zip https://github.com/opencv/opencv/archive/4.4.0.zip

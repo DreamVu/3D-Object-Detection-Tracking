@@ -3,18 +3,20 @@
 
 # include <sys/time.h> 
 # include <opencv2/opencv.hpp>
+# include <vector>
+
 namespace PAL
 {    
     struct BoundingBox
 	{
-		int x1, y1, x2, y2;
+		float x1, y1, x2, y2;
 
 		BoundingBox() : x1(0), y1(0), x2(0), y2(0)
 		{
 
 		} 
 
-		BoundingBox(int a, int b, int c, int d) 
+		BoundingBox(float a, float b, float c, float d) 
 		    : x1(a), y1(b), x2(c), y2(d)
 		{
 
@@ -38,6 +40,18 @@ namespace PAL
 		}
 	};
 
+    struct Loc3D
+    {
+        float x, y, z;
+        Loc3D() : x(0.0f), y(0.0f), z(0.0f)
+        {
+        } 
+        Loc3D(float x1, float y1, float z1) 
+            : x(x1), y(y1), z(z1)
+        {
+        }
+    }; 
+
      enum class Mode
     {
         IDLE,
@@ -49,7 +63,19 @@ namespace PAL
         POINT_CLOUD,
         REFINED_LEFT,        //will remove later
         LASER_SCAN,
-        SGBM
+        TRACKING,
+        SGBM,
+        FOLLOWING,
+        OBJECT_TRACKING,
+        OBJECT_FOLLOWING,
+        OBJECT_DETECTION,
+    };
+
+    enum States
+    {
+        OK = 0,
+        SEARCHING = 1,
+        TERMINATED = 2,
     };  
     
     namespace Data
@@ -59,7 +85,10 @@ namespace PAL
             timeval timestamp;
             int iterations;
 
-            Common():iterations(0){}
+            Common():iterations(0)
+            {
+                gettimeofday(&timestamp, NULL);
+            }
         };
 
         struct Camera : Common
@@ -81,63 +110,64 @@ namespace PAL
             cv::Mat right;
             cv::Mat depth;
         };        
-        
-        struct People : Common
-        {
-            // std::vector<cv::Rect> bounding_boxes;
-            std::vector<PAL::BoundingBox> bounding_boxes;
-            cv::Mat left;
-            cv::Mat depth;
-        };    
-
-        struct Refined : Common
-        {
-            cv::Mat left;
-            cv::Mat right;
-            cv::Mat refined_left;
-        };    
+ 
         
         struct FloorMask : Common
         {
             cv::Mat left;
             cv::Mat right;
-            cv::Mat depth;
             cv::Mat floor_mask;
         };          
         
-        struct FloorFocalMap : Common
+        struct DepthFloorMask : Common
         {
             cv::Mat left;
-            cv::Mat depth;
-            cv::Mat focal_map;
-        };      
-        
-        struct PointCloud : Common
-        {
-            cv::Mat left;
-            cv::Mat depth;
-            cv::Mat point_cloud;
-        };
-        
-        struct StereoDepthData : Common
-	    {
-	        cv::Mat left;
             cv::Mat right;
-	        cv::Mat disparity; 
-	        cv::Mat depth;
+            cv::Mat depth;            
+            cv::Mat floor_mask;
+        };
+
+        struct TrackND
+        {
+            float t_is_activated;
+            float t_track_id;
+            float active;
+            PAL::BoundingBox boxes; 
+
+            float t_score;
+            float t_label;
+            Loc3D locations_3d;
+        };
+
+        struct TrackingData : Common
+	    {
+		    cv::Mat left;
+		    cv::Mat right;
+		    std::vector<PAL::Data::TrackND> current;
+            std::vector<PAL::Data::TrackND> lost;
+            std::vector<PAL::Data::TrackND> removed;
 	    };
 	
-	    struct ODOA_Data : Common
+	    struct OutputData : Common
 	    {
-	        cv::Mat left;
-	        cv::Mat right;
-            cv::Mat de_out; 
-	        cv::Mat depth;
-	        cv::Mat scan;
-	        cv::Mat marked_left;
+		    cv::Mat left;
+		    cv::Mat right;
+		    cv::Mat depth;
+            cv::Mat floor;
+		    std::vector<PAL::Data::TrackND> current;
+            std::vector<PAL::Data::TrackND> lost;
+            std::vector<PAL::Data::TrackND> removed;
 	    };
-    }
 
+        struct TrackingResults : Common
+        {
+            cv::Mat left;
+            cv::Mat right;
+            cv::Mat depth;
+            cv::Mat floor;
+            std::vector<std::vector<PAL::Data::TrackND>> trackingData;
+        };
+    }
 }
 
 

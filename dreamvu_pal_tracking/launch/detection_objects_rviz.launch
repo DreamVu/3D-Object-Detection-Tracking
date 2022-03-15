@@ -1,0 +1,8 @@
+<launch>
+        <node name="detection_objects_node" pkg="dreamvu_pal_tracking" type="object_detection" output="screen" />
+        
+        <node name="rviz" pkg="rviz" type="rviz" args="-f pal -d $(find dreamvu_pal_tracking)/launch/tracking.rviz" output="screen"/>
+              
+      
+</launch>        
+          

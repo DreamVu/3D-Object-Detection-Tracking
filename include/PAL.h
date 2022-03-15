@@ -15,22 +15,8 @@ namespace PAL
 
 	//Initializes the PAL API
 	//returns SUCCESS/FAILURE etc.
-	PAL::Acknowledgement Init(int& panoramaWidth, int& panoramaHeight, int cameraIndex = -1, void* arg=nullptr);
+	PAL::Acknowledgement Init(int& panoramaWidth, int& panoramaHeight, int cameraIndex = -1, bool EnableDepth = true, int model_num = 1, void* arg=nullptr);
 	
-	//Grabs the latest panoramas available
-	//returns SUCCESS/FAILURE etc.
-	//ARGUMENTS:
-	//left			: Panorama - as seen by the left eye - packed in memory same as OpenCV CV_8UC3
-	//right			: Panorama - as seen by the right eye - packed in memory same as OpenCV CV_8UC3
-	//depth			: Panorama - as seen by the depth sensor - packed in memory same as OpenCV CV_32FC1
-	//disparity		: disparity image, based on which the depth image is computed
-	//normalize		: If true, the disparity would be normalized (CV_8UC1), if false unnormalized disparity (CV_16SC1)
-	//asynchronous  : If true, the function returns immediately with the last computed values for disparity and depth.
-	PAL::Acknowledgement GrabFrames(PAL::Image* left, 
-									PAL::Image* right, 
-									PAL::Image* depth = 0, 
-									PAL::Image* disparity = 0, bool normalize = false,
-									bool asynchronous = true);
 
 	//This is a blocking call, waits till all the pending depth / disparity computations are finished and returns.
 	//This should be used only when asynchronous is true in GrabFrames function arguments
@@ -40,8 +26,6 @@ namespace PAL
 	//Writes the current camera properties into the provided memory location
 	PAL::Acknowledgement GetCameraProperties(PAL::CameraProperties* properties);
 	
-	
-	PAL::Acknowledgement GetOdoaData(PAL::CameraProperties* properties);
 
 
 	// SetCameraProperties
@@ -68,6 +52,7 @@ namespace PAL
 	// Refer API Doc for more information about this function
 	PAL::Acknowledgement SetCameraProperties(PAL::CameraProperties* properties, unsigned int *flags);
 
+    PAL::Acknowledgement SetCameraData(PAL::CameraProperties* data, unsigned int flags);
 
 	//Returns a vector of available resolutions. 
 	//While changing the resolution through SetCameraProperties...
@@ -92,9 +77,6 @@ namespace PAL
 	//Saves the current camera properties into the provided file name
 	PAL::Acknowledgement SaveProperties(const char* fileName);
 	
-	//Save ODOA Properties to a YAML file
-    PAL::Acknowledgement Save_ODOA_Properties(const char* fileName);
-
 	//Loads the camera properties saved in the provided file
 	//If data argument is provided, the properties in the file would be written into data
     PAL::Acknowledgement LoadProperties(const char* fileName, PAL::CameraProperties* data = 0);
@@ -127,10 +109,12 @@ namespace PAL
 
 	PAL::Data::Stereo GetStereoData();
 	PAL::Data::Depth  GetDepthData();
-	PAL::Data::People GetPeopleData(bool depth);
-	PAL::Data::PointCloud GetPointCloudData();
+
 	bool SavePointCloud(const char* fileName, cv::Mat pcMat);bool SavePointCloud(const char* fileName, cv::Mat pcMat);
-	PAL::Data::ODOA_Data GrabLaserScanData();
+	PAL::Data::TrackingResults GrabTrackingData();
+	PAL::Data::TrackingResults GrabDetectionData();
+
+	void SetTrackID(int id);
 }
 
 # endif //PAL_H
