@@ -1,6 +1,6 @@
 /*
 
-CODE SAMPLE # 003: Object following panorama
+CODE SAMPLE # 003: Object Tracking panorama
 This code will grab the left panorama with object tracking data overlayed on it and would be displayed in a window using opencv
 
 
@@ -70,7 +70,7 @@ int main( int argc, char** argv )
     
     int key = ' ';
 
-    printf("Press ESC to close the window.\n");   
+    printf("\nPress ESC to close the window.\n");   
 
     Mat output = cv::Mat::zeros(height, width, CV_8UC3);
     

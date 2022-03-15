@@ -74,7 +74,7 @@ int main( int argc, char** argv )
     //Display the concatenated image
     imshow( "PAL People Tracking", output);
     
-    printf("Press ESC to close the window.\n");
+    printf("\nPress ESC to close the window.\n");
     //27 = esc key. Run the loop until the ESC key is pressed
     while(key != 27)
     {

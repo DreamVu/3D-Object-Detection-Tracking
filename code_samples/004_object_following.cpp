@@ -92,7 +92,8 @@ int main( int argc, char** argv )
     
     int key = ' ';
     
-    printf("Press ESC to close the window.\n");
+    printf("\nPress ESC to close the window.\n");
+    printf("Press i/I to enter the id you want to follow.\n");
 
     Mat output = cv::Mat::zeros(height, width, CV_8UC3);
     
@@ -117,7 +118,7 @@ int main( int argc, char** argv )
 
         if (key == 'i' || key == 'I')
         {
-            string zenityCmd = "zenity --entry --text \"Enter ID to Track\" --title \"PAL People Following\" --entry-text=\"\"";
+            string zenityCmd = "zenity --entry --text \"Enter ID to Track\" --title \"PAL Object Following\" --entry-text=\"\"";
             string output = getCmdOutput(zenityCmd);
 
             output.erase(std::remove(output.begin(), output.end(), ' '), output.end());
@@ -130,7 +131,7 @@ int main( int argc, char** argv )
             }    
             else
             {
-                string errorCmd = "zenity --warning  --text \"Not a valid input\" --title \"PAL People Following\"";
+                string errorCmd = "zenity --warning  --text \"Not a valid input\" --title \"PAL Object Following\"";
                 FILE *outpStream = popen(errorCmd.c_str(), "r");
                 pclose(outpStream);      
             }
