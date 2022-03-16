@@ -44,7 +44,8 @@ The data files are delivered along with the purchase of the PAL USB camera. In c
 
 
 ## Documentation 
-For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the [Evaluation Manual](https://docs.google.com/document/d/e/2PACX-1vSHmm4eHTxWZ0G1LhdJgI0NANms3ProJZyiBbBw7GNlKyMVQY6Wuw4FEvB9tUM0FuCK74i0AyEv25WG/pub)
+For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
+- [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
 
 ## Support 
 If you need help or more informations check our [Help Center](https://support.dreamvu.com/portal/en/home) or join our [Community](https://support.dreamvu.com/portal/en/community/dreamvu-inc) or you can email us directly at support@dreamvu.com 
