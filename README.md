@@ -4,10 +4,10 @@ The software provides 3D object detection and tracking using [PAL USB](https://d
 Please follow the instructions given below on any of the Nvidia Jetson embedded boards with Jetpack 4.6 to install the software.
 
 ## Step 1. Clone the repository 
--     sudo apt-get install git-lfs
-      git clone -b PAL --single-branch https://github.com/DreamVu/3D-Object-Detection-Tracking.git
-      cd 3D-Object-Detection-Tracking
-      git lfs pull
+     sudo apt-get install git-lfs
+     git clone -b PAL --single-branch https://github.com/DreamVu/3D-Object-Detection-Tracking.git
+     cd 3D-Object-Detection-Tracking
+     git lfs pull
       
 ## Step 2. Installing Dependencies 
 Confirm the following dependencies. These are must have to proceed further
