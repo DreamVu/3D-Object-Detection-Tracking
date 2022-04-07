@@ -5,7 +5,7 @@ Please follow the instructions given below on any of the Nvidia Jetson embedded 
 
 ## Step 1. Clone the repository 
 -     sudo apt-get install git-lfs
-      git clone -b PAL --single-branch https://github.com/DreamVu/3D-Object-Detection-Tracking.git
+      git clone -b PAL-Mini --single-branch https://github.com/DreamVu/3D-Object-Detection-Tracking.git
       cd 3D-Object-Detection-Tracking
       git lfs pull
       
