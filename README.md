@@ -18,7 +18,7 @@ Confirm the following dependencies. These are must have to proceed further
   Follow these steps to install the required OpenCV dependencies. 
 -      cd installations
        chmod +x ./*.sh
-       sudo ./opencv.sh
+       ./opencv.sh
 
 - ### Python 3.6 libraries (pytorch, torchvision, numpy, PIL, etc.)
 
@@ -35,12 +35,6 @@ Confirm the following dependencies. These are must have to proceed further
             For Jetson Nano arg2: 1000
             
 Once complete please reboot the system.
-
-## Step 4. Installing Camera Data File 
-The data files are delivered along with the purchase of the PAL USB camera. In case you have not received them, please request for the files by filling out a [form](https://support.dreamvu.com/portal/en/newticket)
-
-      chmod +x setup.sh
-      sudo ./setup.sh
 
 
 ## Documentation 
