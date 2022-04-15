@@ -9,7 +9,8 @@ sudo apt-get install -y gstreamer1.0-tools gstreamer1.0-alsa gstreamer1.0-plugin
 python3 -m venv dreamvu_ws
 source ./dreamvu_ws/bin/activate
 pip install --upgrade setuptools pip
-
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+pip install pyparsing==3.0.8
 pip install -U grpcio absl-py 
 
 #torch installation
