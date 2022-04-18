@@ -10,7 +10,7 @@ if test -f "$File1"; then
     cp Res2.png /data/lut/
     cp Res2.png ../bin_files/root-data/data/lut/
     cp unit.txt /usr/local/bin/data
-    rm Res2.png data.zip
+    rm Res2.png data.zip unit.txt
     validated=true
 fi
 
