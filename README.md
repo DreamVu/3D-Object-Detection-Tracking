@@ -36,13 +36,6 @@ Confirm the following dependencies. These are must have to proceed further
             
 Once complete please reboot the system.
 
-## Step 4. Installing Camera Data File 
-The data files are delivered along with the purchase of the PAL MINI camera. In case you have not received them, please request for the files by filling out a [form](https://support.dreamvu.com/portal/en/newticket)
-
-      chmod +x setup.sh
-      sudo ./setup.sh
-
-
 ## Documentation 
 For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
 - [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
