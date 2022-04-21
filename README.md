@@ -18,7 +18,7 @@ Confirm the following dependencies. These are must have to proceed further
   Follow these steps to install the required OpenCV dependencies. 
 -      cd installations
        chmod +x ./*.sh
-       sudo ./opencv.sh
+       ./opencv.sh
 
 - ### Python 3.6 libraries (pytorch, torchvision, numpy, PIL, etc.)
 
