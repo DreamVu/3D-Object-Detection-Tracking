@@ -3,8 +3,6 @@ chmod +x ./*.sh
 
 ./uninstall.sh
 
-./dependencies.sh
-
 ./ros_cmake.sh
 
 cd activation
@@ -15,6 +13,8 @@ sudo cp *.json /usr/local/bin/data
 sudo chown -R $USER:$USER /usr/local/bin/data/*.json
 
 cd ..
+
+./dependencies.sh
 
 ./setup_python_env.sh
 
