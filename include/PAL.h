@@ -115,6 +115,7 @@ namespace PAL
 	PAL::Data::TrackingResults GrabDetectionData();
 
 	void SetTrackID(int id);
+	int GetTrackID();
 }
 
 # endif //PAL_H
