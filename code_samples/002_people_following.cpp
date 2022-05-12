@@ -136,7 +136,22 @@ int main( int argc, char** argv )
                 FILE *outpStream = popen(errorCmd.c_str(), "r");
                 pclose(outpStream);      
             }
-                
+        }
+        if (key == 'p' || key == 'P')
+        {
+            int new_id = PAL::GetTrackID();
+            if(new_id == -2)
+            {
+                std::cout << "Currently not in Following Mode" << std::endl;
+            }
+            else if(new_id == -1)
+            {
+                std::cout << "No ID has been entered. Press 'i' to enter an ID" << std::endl; 
+            }
+            else
+            {
+                std::cout << "The ID currently being followed is: " << new_id << std::endl;
+            }
         }
     }
 
