@@ -94,6 +94,7 @@ int main( int argc, char** argv )
     
     printf("\nPress ESC to close the window.\n");
     printf("Press i/I to enter the id you want to follow.\n");
+    printf("Press p/P to print the id that is being followed.\n");
 
     Mat output = cv::Mat::zeros(height, width, CV_8UC3);
     
@@ -136,7 +137,22 @@ int main( int argc, char** argv )
                 FILE *outpStream = popen(errorCmd.c_str(), "r");
                 pclose(outpStream);      
             }
-                
+        }
+        if (key == 'p' || key == 'P')
+        {
+            int new_id = PAL::GetTrackID();
+            if(new_id == -2)
+            {
+                std::cout << "Currently not in Following Mode" << std::endl;
+            }
+            else if(new_id == -1)
+            {
+                std::cout << "No ID has been entered. Press 'i' to enter an ID" << std::endl; 
+            }
+            else
+            {
+                std::cout << "The ID currently being followed is: " << new_id << std::endl;
+            }
         }
     }
 
