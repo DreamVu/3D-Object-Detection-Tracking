@@ -52,7 +52,7 @@ cd activation
 ./activation.sh
 cd ..
 
-sudo cp objdet.pc /usr/local/lib
+sudo cp objdet.pc /usr/local/lib/pkgconfig
 
 sudo ./setsymlinks
 
