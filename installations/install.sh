@@ -54,7 +54,7 @@ cd ..
 
 sudo cp objdet.pc /usr/local/lib/pkgconfig
 
-sudo ./setsymlinks
+sudo ./setsymlinks.sh
 
 ./timeout_patch.sh
 
