@@ -9,6 +9,6 @@ includedir_new=${prefix}/include/opencv4
 Name: OpenCV
 Description: Open Source Computer Vision Library
 Version: 4.4.0
-Libs: -L${exec_prefix}/lib -lopencv_highgui -lopencv_core -lopencv_imgproc -lopencv_cudev -lopencv_videoio -lopencv_imgcodecs \
+Libs: -L${exec_prefix}/lib -lopencv_highgui -lopencv_core -lopencv_imgproc -lopencv_cudev -lopencv_videoio -lopencv_imgcodecs
 Libs.private: -lm -lpthread -lcudart_static -ldl -lrt -lnppc -lnppial -lnppicc -lnppicom -lnppidei -lnppif -lnppig -lnppim -lnppist -lnppisu -lnppitc -lnpps -lcublas -lcufft -L-L/usr/local/cuda-10.2 -llib64 -L-L/usr/lib -laarch64-linux-gnu
 Cflags: -I${includedir_old} -I${includedir_new}
