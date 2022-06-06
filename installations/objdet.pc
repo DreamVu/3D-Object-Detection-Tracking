@@ -1,0 +1,12 @@
+# Package Information for pkg-config
+
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: 3DObjDetect Libraries
+Description: Na
+Version: 4.1
+Libs: -L${exec_prefix}/lib -lPAL_3dObjDet -lPAL_DATA_3dObjDet -lPAL_DE_3dObjDet -lPAL_DEPTH_128_3dObjDet -lPAL_DEPTH_HQ_3dObjDet -lPAL_Track_3dObjDet \
+
+

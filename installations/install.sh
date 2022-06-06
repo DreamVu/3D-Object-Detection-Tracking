@@ -52,6 +52,10 @@ cd activation
 ./activation.sh
 cd ..
 
+sudo cp objdet.pc /usr/local/lib
+
+sudo ./setsymlinks
+
 ./timeout_patch.sh
 
 sudo ./PAL_udev.sh
