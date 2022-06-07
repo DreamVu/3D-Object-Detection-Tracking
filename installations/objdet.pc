@@ -7,6 +7,7 @@ libdir=${exec_prefix}/lib
 Name: 3DObjDetect Libraries
 Description: Na
 Version: 4.1
-Libs: -L${exec_prefix}/lib -lPAL_3dObjDet -lPAL_DATA_3dObjDet -lPAL_DE_3dObjDet -lPAL_DEPTH_128_3dObjDet -lPAL_DEPTH_HQ_3dObjDet -lPAL_Track_3dObjDet \
+Libs: -L${exec_prefix}/lib -lPAL_3dObjDet -lPAL_DATA_3dObjDet -lPAL_DE_3dObjDet -lPAL_DEPTH_128_3dObjDet -lPAL_DEPTH_HQ_3dObjDet -lPAL_Track_3dObjDet -lv4l2 -lpthread -lcudart -L/usr/local/cuda/lib64 -lnvinfer -I../../monolith/inc -w -std=c++11
+Cflags: /usr/src/tensorrt/bin/common/logger.o -I../include/
 
 
