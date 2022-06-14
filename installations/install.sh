@@ -18,6 +18,8 @@ cd ..
 
 ./setup_python_env.sh
 
+./addswaparea.sh
+
 cd bin_files
 
 chmod +x setup.sh
