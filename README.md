@@ -1,7 +1,7 @@
 # 3D Object Detection and Tracking 
 The software provides 3D object detection and tracking using [PAL USB](https://dreamvu.com/pal-usb/). PAL- USB is the only single sensor omnidirectional vision system to provide 360° stereoscopic sensing with depth perception. 
 
-Please follow the instructions given below on any of the Nvidia Jetson embedded boards with Jetpack 4.6 to install the software.
+Please follow the instructions given below on any of the Nvidia Jetson embedded boards with Jetpack 4.6.0 to install the software.
 
 ## Step 1. Clone the repository 
      sudo apt-get install git-lfs
@@ -12,7 +12,7 @@ Please follow the instructions given below on any of the Nvidia Jetson embedded 
 ## Step 2. Installing Dependencies 
 Confirm the following dependencies. These are must have to proceed further
 
-- ### Jetpack 4.6
+- ### Jetpack 4.6.0
 
 - ### CUDA enabled OpenCV 4.4.0 and OpenCV Contrib 4.4.0 libraries. 
   Follow these steps to install the required OpenCV dependencies. 
