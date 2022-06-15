@@ -5,15 +5,6 @@ chmod +x ./*.sh
 
 ./ros_cmake.sh
 
-cd activation
-
-chmod +x run ./*.sh
-
-sudo cp *.json /usr/local/bin/data
-sudo chown -R $USER:$USER /usr/local/bin/data/*.json
-
-cd ..
-
 ./dependencies.sh
 
 ./setup_python_env.sh
@@ -36,7 +27,7 @@ then
 			./build_engines.sh $2
 		else
 			./build_engines.sh 3500
-	    	fi
+	    fi
 	else
 		echo "[INFO] Skipping Rebuilding Engines"	
 	fi    
@@ -44,6 +35,15 @@ then
 else
 	echo "[INFO] Skipping Rebuilding Engines"
 fi
+
+cd ..
+
+cd activation
+
+chmod +x run ./*.sh
+
+sudo cp *.json /usr/local/bin/data
+sudo chown -R $USER:$USER /usr/local/bin/data/*.json
 
 cd ..
 
