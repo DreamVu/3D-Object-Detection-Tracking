@@ -55,7 +55,7 @@ int main( int argc, char** argv )
     namedWindow( "PAL People Tracking", WINDOW_NORMAL ); // Create a window for display.
     
     int width, height, camera_index = -1, model_id = 0;
-	bool EnableDepth = false;
+	bool EnableDepth = true;
     PAL::Mode mode = PAL::Mode::TRACKING;
 
     if(PAL::Init(width, height, camera_index, EnableDepth, model_id, &mode) != PAL::SUCCESS) //Connect to the PAL camera

@@ -6,4 +6,5 @@ if [[ $distribution == "bionic" ]]; then
 	cat ../dreamvu_pal_tracking/cmake_template/footer.txt >> ../dreamvu_pal_tracking/CMakeLists.txt
 else
 	cat ../dreamvu_pal_tracking/cmake_template/footer2.txt >> ../dreamvu_pal_tracking/CMakeLists.txt
+fi
 

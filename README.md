@@ -1,5 +1,5 @@
 # 3D Object Detection and Tracking 
-The software provides 3D object detection and tracking using [PAL MAX](https://dreamvu.com/pal-ethernet/). PAL- MAX is the only single sensor omnidirectional vision system to provide 360° stereoscopic sensing with depth perception. 
+The software provides 3D object detection and tracking using [PAL MAX](https://dreamvu.com/pal-ethernet/). PAL MAX is the only single sensor omnidirectional vision system to provide 360° stereoscopic sensing with depth perception. 
 
 ### Supported Devices
 - Nvidia Jetson embedded boards with Jetpack 4.6.0 
@@ -14,17 +14,13 @@ Please follow the instructions given below on any of the to install the software
      cd 3D-Object-Detection-Tracking
      git lfs pull
       
-## Step 2. Installing Dependencies 
-Confirm the following dependencies. These are must have to proceed further
 
-- ### OpenCV 4.4.0 for Jetson devices or OpenCV 3.4.4 for Intel x86_64 devices 
-
-## Step 3. Installing PAL-MAX SDK
+## Step 2. Installing PAL-MAX SDK
       cd installations
       chmod +x ./*.sh
       ./install.sh
             
-Once complete please reboot the system.
+Once complete please reboot the system. Make sure that PAL MAX camera is properly connected via the ethernet before running the application.
 
 
 ## Documentation 
