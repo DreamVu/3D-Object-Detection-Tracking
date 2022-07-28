@@ -10,7 +10,7 @@ Please follow the instructions given below on any of the to install the software
 
 ## Step 1. Clone the repository 
      sudo apt-get install git-lfs
-     git clone -b PAL-MAX --single-branch https://github.com/DreamVu/3D-Object-Detection-Tracking.git
+     git clone -b PAL-Max --single-branch https://github.com/DreamVu/3D-Object-Detection-Tracking.git
      cd 3D-Object-Detection-Tracking
      git lfs pull
       
