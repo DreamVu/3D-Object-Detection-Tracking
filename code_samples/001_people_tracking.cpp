@@ -37,14 +37,25 @@ using namespace cv;
 using namespace std;
 using namespace std::chrono;
 
+# include <csignal>
+
+bool init_done = false;
+
+void signalHandler( int signum )
+{
+    printf("Interrupt signal %d\n", signum); 
+    if(init_done) PAL::Destroy();
+    exit(signum);
+}
 
 int main( int argc, char** argv )
 {
+    signal(SIGINT, signalHandler);
 
     namedWindow( "PAL People Tracking", WINDOW_NORMAL ); // Create a window for display.
     
     int width, height, camera_index = -1, model_id = 0;
-	bool EnableDepth = true;
+	bool EnableDepth = false;
     PAL::Mode mode = PAL::Mode::TRACKING;
 
     if(PAL::Init(width, height, camera_index, EnableDepth, model_id, &mode) != PAL::SUCCESS) //Connect to the PAL camera
@@ -61,6 +72,7 @@ int main( int argc, char** argv )
 	{
 	    printf("Error Loading settings\n");
 	}
+    init_done = true;
 	
     //width and height are the dimensions of each panorama.
     //Each of the panoramas are displayed at one fourth their original resolution.
@@ -72,7 +84,7 @@ int main( int argc, char** argv )
     Mat output = cv::Mat::zeros(height, width, CV_8UC3);
     
     //Display the concatenated image
-    imshow( "PAL People Tracking", output);
+    imshow( "PAL People Tracking", output);    
     
     printf("\nPress ESC to close the window.\n");
     //27 = esc key. Run the loop until the ESC key is pressed
@@ -83,7 +95,7 @@ int main( int argc, char** argv )
         data = PAL::GrabTrackingData();
 
         cv::Mat output = data.left;
-        
+
         //Display the concatenated image
         imshow( "PAL People Tracking", output);  
         

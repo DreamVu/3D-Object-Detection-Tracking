@@ -91,6 +91,14 @@ namespace PAL
             }
         };
 
+        struct InitData
+        {
+            int camera_index;
+            bool EnableDepth;
+            int MODEL_NUM;
+            PAL::Mode mode;
+        };
+
         struct Camera : Common
         {
             cv::Mat cfm;

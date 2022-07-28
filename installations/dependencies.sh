@@ -1,16 +1,17 @@
 #!/bin/sh
 sudo apt-get update -y # To get the latest package lists
-#sudo apt-get upgrade -y # To install the latest package 
+
 sudo apt-get install xorg -y
 sudo apt-get install build-essential -y
-sudo apt-get install g++ libglu1-mesa-dev freeglut3 freeglut3-dev mesa-common-dev qt5-default -y
-sudo cp libmyelin.so /usr/lib/aarch64-linux-gnu/
+sudo apt-get install g++ -y
 
-unzip eigen-3.3.9.zip
-cd eigen-3.3.9
-mkdir build
-cd build
-cmake ..
-sudo make install
-cd ../../
+# Ethernet Streaming dependencies
+sudo apt-get install curl gstreamer1.0-tools gstreamer1.0-alsa gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libjpeg-dev libglu1-mesa-dev freeglut3 freeglut3-dev mesa-common-dev qt5-default sshpass -y
 
+sudo wget -qO - https://dreamvu.github.io/ppa/KEY.gpg | sudo apt-key add -
+sudo wget -qO /etc/apt/sources.list.d/dreamvu.list https://dreamvu.github.io/ppa/dreamvu.list
+
+sudo apt update
+sudo apt install opencv-dvu
+
+echo "export LD_LIBRARY_PATH=$"LD_LIBRARY_PATH":`pwd`/../lib" >> ~/.bashrc 

@@ -36,6 +36,16 @@ ESC key closes the window
 using namespace cv;
 using namespace std;
 
+# include <csignal>
+
+bool init_done = false;
+
+void signalHandler( int signum )
+{
+    printf("Interrupt signal %d\n", signum); 
+    if(init_done) PAL::Destroy();
+    exit(signum);
+}
 
 string getCmdOutput(string cmd)
 {
@@ -75,6 +85,7 @@ int main( int argc, char** argv )
         printf("Init failed\n");
         return 1;
     }
+    init_done = true;
     
     usleep(10);
     
