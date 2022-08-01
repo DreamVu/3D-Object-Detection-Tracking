@@ -1,12 +1,14 @@
 # 3D Object Detection and Tracking 
 The software provides 3D object detection and tracking using [PAL Max](https://dreamvu.com/pal-ethernet/). PAL Max is the only single sensor omnidirectional vision system to provide 360° stereoscopic sensing with depth perception. 
 
-### Supported Devices
-- Nvidia Jetson embedded boards with various [Jetpacks](https://developer.nvidia.com/embedded/jetpack-sdk-46)
+PAL-Max is an embedded camera. To control the camera, you need to install the host SDK on one of the following supported platforms.
+
+### Supported Host Platforms 
+- Nvidia Jetson embedded boards with various [Jetpack SDK versions](https://developer.nvidia.com/embedded/jetpack-sdk-46)
 - Intel x86_64 system with Ubuntu 18.04 OS
 - Intel x86_64 system with Ubuntu 20.04 OS
 
-Please follow the instructions given below on any of the supported devices to install the software.
+Please follow the instructions given below on any of the supported devices to install the software on the host machine. 
 
 ## Step 1. Clone the repository 
      sudo apt-get install git-lfs
@@ -22,9 +24,8 @@ Please follow the instructions given below on any of the supported devices to in
             
 Once complete please reboot the system. 
 
-## Steps to connect to the device
-      Make sure that PAL Max camera is properly connected via the ethernet.
-      Select the `DirectConnect` profile for wired connections. Option to select the profile can be found on the top-right corner under wired connections section.
+## Getting Started 
+Connect the PAL Max camera properly to the host machine via the ethernet. Select the `DirectConnect` profile for wired connections. Option to select the profile can be found on the top-right corner under wired connections section.
 
 
 ## Documentation 
