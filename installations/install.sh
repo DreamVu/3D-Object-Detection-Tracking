@@ -6,6 +6,8 @@ chmod +x ./*.sh
 
 ./ros_cmake.sh
 
+./setup_data.sh
+
 if [[ $(uname -p) == "x86_64" ]]; then 
 	cp ../lib/libfiles/libPAL_x86.so ../lib/libPAL.so
 else 
