@@ -10,7 +10,7 @@ The Package can be installed in two ways:
 
 ### Method 1. Using Debian packages
 
-The Package can be downloaded directly from [here](https://github.com/DreamVu/ppa/blob/main/3D-Object-Detection-Tracking/3d-object-detection-tracking-pal-usb?raw=true) and installed by running the below command from the location where it is downloaded,
+The Package can be downloaded directly from [here](https://github.com/DreamVu/ppa/raw/main/3d-object-detection-tracking/3d-object-detection-tracking-pal-usb) and installed by running the below command from the location where it is downloaded,
 
     chmod +x 3d-object-detection-tracking-pal-usb && ./3d-object-detection-tracking-pal-usb
 
