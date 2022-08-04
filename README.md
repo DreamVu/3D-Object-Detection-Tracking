@@ -1,4 +1,4 @@
-# PAL USB
+# 3D Object Detection and Tracking
 The software provides 3D object detection and tracking using [PAL USB](https://dreamvu.com/pal-usb/). PAL- USB is the only single sensor omnidirectional vision system to provide 360° stereoscopic sensing with depth perception. 
 
 ## System Requirements
@@ -37,12 +37,10 @@ The Package can be installed by running the below command after installing PAL U
     sudo apt update
     sudo apt install dreamvu-melodic-tracking
 
+
 ## Documentation 
-- [Setup Guide](https://docs.google.com/document/d/e/2PACX-1vQvz5Ms3WfdZyYbyvzPIqjyyGyXEdKc9-4SrJUJa0WAnXnlB5WTftUWCWAfgfV6Xbaqmxh0S25kFsTu/pub)
-- [Code Samples](https://docs.google.com/document/d/e/2PACX-1vQ32SF48KvE6VvsHW94KX-23A8a3baPhGHiT65xJ2AeR5tbdD72ZcA02KOfkAmuUBnsYT8Wf7iR5DlE/pub)
-- [ROS Application Note](https://docs.google.com/document/d/e/2PACX-1vTN9U7ZocPkSLjN90oEgiOtFgr4e81qbgLsfpibcUGtQnvx3zpwMETmWvJ4BujKfcuOYSs_Yh95_4fm/pub)
-- [GPIO & UART Application Note](https://docs.google.com/document/d/e/2PACX-1vTN9U7ZocPkSLjN90oEgiOtFgr4e81qbgLsfpibcUGtQnvx3zpwMETmWvJ4BujKfcuOYSs_Yh95_4fm/pub)
-- [API Documentation](https://docs.google.com/document/d/e/2PACX-1vSrv7mq6tkspG0TiyJVDDMPw5PTJAG6Ecv41tnu8IERx5wKkCf7xXf26-udCOf1WvpbKkAmcXr-1UgT/pub)
+For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
+- [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
 
 ## Support 
 If you need help or more informations check our [Help Center](https://support.dreamvu.com/portal/en/home) or join our [Community](https://support.dreamvu.com/portal/en/community/dreamvu-inc). 
