@@ -35,7 +35,7 @@ Once complete please reboot the system. The packages will be installed in \~/Dre
 The Package can be installed by running the below command after installing PAL USB,
 
     sudo apt update
-    sudo apt install dreamvu-melodic-tracking
+    sudo apt install pal-usb-melodic-tracking
 
 
 ## Documentation 
