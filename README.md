@@ -35,7 +35,7 @@ Once complete please reboot the system. The packages will be installed in \~/Dre
 The Package can be installed by running the below command after installing PAL MINI,
 
     sudo apt update
-    sudo apt install dreamvu-melodic-tracking
+    sudo apt install pal-mini-melodic-tracking
 
 ## Documentation 
 For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
