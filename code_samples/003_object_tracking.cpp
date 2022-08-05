@@ -40,17 +40,18 @@ using namespace std::chrono;
 
 # include <csignal>
 
-bool init_done = false;
+bool g_mExit = false;
 
 void signalHandler( int signum )
 {
     printf("Interrupt signal %d\n", signum); 
-    if(init_done) PAL::Destroy();
-    exit(signum);
+    printf("Closing. This may take a minute\n");
+    g_mExit = true;
 }
 
 int main( int argc, char** argv )
 {
+    signal(SIGINT, signalHandler);
 
     namedWindow( "PAL Object Tracking", WINDOW_NORMAL ); // Create a window for display.
     
@@ -63,7 +64,6 @@ int main( int argc, char** argv )
         printf("Init failed\n");
         return 1;
     }
-    init_done = true;
     
     usleep(10);
     
@@ -90,7 +90,7 @@ int main( int argc, char** argv )
     
     //27 = esc key. Run the loop until the ESC key is pressed
 
-    while(key != 27)
+    while(key != 27 && !g_mExit)
     {
         PAL::Data::TrackingResults data;
         data = PAL::GrabTrackingData();
