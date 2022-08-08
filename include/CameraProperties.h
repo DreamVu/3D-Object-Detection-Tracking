@@ -247,10 +247,10 @@ namespace PAL
 		
 		static const int MAX_EXPOSURE = 10000;
 		static const int MIN_EXPOSURE = 1;
-		static const int DEFAULT_EXPOSURE = 500;
+		static const int DEFAULT_EXPOSURE = 1500;
 				
 		static const bool DEFAULT_AUTO_WHITE_BAL = 1;
-		static const bool DEFAULT_AUTO_EXPOSURE = 0;
+		static const bool DEFAULT_AUTO_EXPOSURE = 1;
 
 		static const Resolution DEFAULT_RESOLUTION;
 		static const CaptureType DEFAULT_CAPTURE_TYPE = CaptureType::CAMERA;
@@ -264,7 +264,7 @@ namespace PAL
 		static const int DEFAULT_FOV_START = 0;
 		static const int DEFAULT_FOV_END = 360;
 
-		static const Projection DEFAULT_PROJECTION = PERSPECTIVE;
+		static const Projection DEFAULT_PROJECTION = EQUI_RECTANGULAR;
 		static const DisparityComputation DEFAULT_COMPUTATION = HIGH_QUALITY_A;
 
 

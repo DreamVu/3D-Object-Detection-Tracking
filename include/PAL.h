@@ -81,7 +81,7 @@ namespace PAL
 	//Need to be FOLLOWING or OBJECT_FOLLOWING mode. Else returns -2. 
 	int GetTrackID();
 
-
+	void SetMinDetectionThreshold(float thresh, int model_id);
 }
 
 # endif //PAL_H
