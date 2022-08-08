@@ -88,8 +88,9 @@ int main( int argc, char** argv )
     //Display the concatenated image
     imshow( "PAL Object detection", output);
     
-    //27 = esc key. Run the loop until the ESC key is pressed
+    PAL::SetMinDetectionThreshold(0.9, model_id);
 
+    //27 = esc key. Run the loop until the ESC key is pressed
     while(key != 27 && !g_mExit)
     {
         PAL::Data::TrackingResults data;
