@@ -40,7 +40,6 @@ using namespace std::chrono;
 
 int main( int argc, char** argv )
 {
-    printf("Update Done\n");
     namedWindow( "PAL People Tracking", WINDOW_NORMAL ); // Create a window for display.
     
     int width, height, camera_index = -1, model_id = 0;
