@@ -1,9 +1,6 @@
-cd installations 
-./ros_cmake.sh
-cp -r ../dreamvu_pal_tracking/ ~/catkin_ws/src/
+cp -r ~/DreamVu/3D-Object-Detection-Tracking-PAL-MINI/dreamvu_pal_tracking/ ~/catkin_ws/src/
 cd ~/catkin_ws/
 source ~/catkin_ws/devel/setup.bash
 catkin_make
 source ~/catkin_ws/devel/setup.bash
 roslaunch dreamvu_pal_tracking following_rviz.launch
-

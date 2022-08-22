@@ -1,8 +1,0 @@
-<launch>
-        <node name="following_objects_node" pkg="dreamvu_pal_tracking" type="object_follower" output="screen" />
-        
-        <node name="rviz" pkg="rviz" type="rviz" args="-f pal -d $(find dreamvu_pal_tracking)/launch/tracking.rviz" output="screen"/>
-              
-      
-</launch>        
-          
