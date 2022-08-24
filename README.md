@@ -40,8 +40,8 @@ The Package can be installed by running the below command after installing PAL U
 
 ## Documentation 
 For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
-- [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
 - [Setup Guide](https://docs.google.com/document/d/e/2PACX-1vQKgstm5No1skw1i6Jr3i5H6rVP10IcAvouX2C8CurqOjrHc3yKspn68HPFH2_pp7dvGaLSmCwXeZGX/pub)
+- [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
 
 
 ## Support 
