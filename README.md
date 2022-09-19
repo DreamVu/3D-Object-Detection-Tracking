@@ -56,7 +56,7 @@ You may use [installations/setup_connection.sh](https://github.com/DreamVu/3D-Ob
 
 ### Documentation 
 For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
-- [ROS Samples](TODO)
+- [ROS Samples](https://docs.google.com/document/d/e/2PACX-1vSd1vVj0cE2x1AviwNHMXRtkABDGT5LO6sl-0vEMzUZpGoGi1QYRcIYhyzhZ4Q1YjJ23IucpzSyLNam/pub)
 
 
 ## Support 
