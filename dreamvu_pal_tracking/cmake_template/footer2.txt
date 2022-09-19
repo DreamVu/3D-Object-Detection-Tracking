@@ -34,3 +34,11 @@ target_link_libraries(object_follower ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} 
 add_executable(object_detection src/detection_objects_node.cpp )
 add_dependencies(object_detection ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(object_detection ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_LIBRARIES} ${PAL_LIBRARY})
+
+add_executable(subTrackInfo /usr/src/tensorrt/bin/common/logger.o src/get_track_info_node.cpp )
+add_dependencies(subTrackInfo ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(subTrackInfo ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_LIBRARIES} ${PAL_LIBRARY})
+
+add_executable(pubTrackInfo /usr/src/tensorrt/bin/common/logger.o src/set_camera_properties_node.cpp )
+add_dependencies(pubTrackInfo ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(pubTrackInfo ${CATKIN_LIBRARIES} ${PKG_OPENCV_LDFLAGS} ${V4l2_LIBRARIES} ${PAL_LIBRARY})

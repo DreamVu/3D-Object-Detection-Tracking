@@ -14,6 +14,21 @@ find_package(catkin REQUIRED COMPONENTS
   
 )
 
+add_message_files(FILES
+  Properties.msg
+  BoundingBox.msg
+  Point.msg
+  Loc3D.msg
+  TrackND.msg
+  vec_TrackND.msg
+  vec_vec_TrackND.msg
+)
+
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+)
+
 
 catkin_package(
    LIBRARIES dreamvu_pal_tracking 
