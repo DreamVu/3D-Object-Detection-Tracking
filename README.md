@@ -10,7 +10,7 @@ Install the package on a host device.
 Nvidia Jetson embedded boards with various [Jetpack SDK versions](https://developer.nvidia.com/embedded/jetpack-sdk-46)
 Intel x86_64 system with Ubuntu 18.04/20.04 OS
 
-Please follow the instructions given below on any of the supporthttp://wiki.ros.org/ROS/Installationed devices to install the software on the host machine. 
+Please follow the instructions given below on any of the supported devices to install the software on the host machine. 
 
 ### Step 1. Clone the repository 
      sudo apt-get install git-lfs
