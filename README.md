@@ -1,10 +1,10 @@
 # 3D Object Detection and Tracking 
 The software provides 3D object detection and tracking using [PAL Max](https://dreamvu.com/pal-ethernet/). PAL Max is the only single sensor omnidirectional vision system to provide 360° stereoscopic sensing with depth perception. 
 
-To control PAL Max, you may follow one of the following methods:
+To control PAL Max, users may follow one of the following methods:
 
 ## Method 1
-Install the package on a host device. 
+Install the package on a host device. Using this method, users have access to our APIs and can run C++ code samples as well as sample ROS nodes.
 
 ### Supported Host Platforms 
 Nvidia Jetson embedded boards with various [Jetpack SDK versions](https://developer.nvidia.com/embedded/jetpack-sdk-46)
@@ -35,7 +35,7 @@ For rest of the evaluation of the 3D Object Detection and Tracking SDK, please r
 - [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
 
 ## Method 2
-Run the application directly on Pal Max and interface using the ROS multi-device functionality. Using this method, you can interface without doing any additional installations.
+Run the application directly on Pal Max and interface using the ROS multi-device functionality. Using this method, users can interface without doing any additional installations.
 
 ### Requirements
 - Host System(s) with ROS installed. See [ros/installation](http://wiki.ros.org/ROS/Installation) for more details
