@@ -49,7 +49,7 @@ ssh -tt dreamvu@192.168.0.175 "export ROS_MASTER_URI=<$MASTER_URI> ; bash  /home
 Refer the documentation for more details.
 
 ### Documentation 
-For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
+For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the following document
 - [ROS Application Note](https://docs.google.com/document/d/e/2PACX-1vSd1vVj0cE2x1AviwNHMXRtkABDGT5LO6sl-0vEMzUZpGoGi1QYRcIYhyzhZ4Q1YjJ23IucpzSyLNam/pub)
 
 
