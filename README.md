@@ -35,18 +35,10 @@ For rest of the evaluation of the 3D Object Detection and Tracking SDK, please r
 - [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
 
 ## Method 2
-Run the application directly on Pal Max and interface using the ROS multi-device functionality. Using this method requires no additional installations.
+Run the application directly on Pal Max and interface using the ROS multi-device functionality. Using this method requires no additional installations. Refer the documentation for more details.
 
 ### Requirements
 - Host System(s) with ROS installed. See [ros/installation](http://wiki.ros.org/ROS/Installation) for more details
-
-### Steps to start ROS sample node
-- Select the system to make the ros master and run `roscore` on the selected system
-- Run the following command
-```
-ssh -tt dreamvu@192.168.0.175 "export ROS_MASTER_URI=<$MASTER_URI> ; bash  /home/dreamvu/3D-Object-Detection-Tracking/<execution_script> $model_id $enable_depth"
-```
-Refer the documentation for more details.
 
 ### Documentation 
 For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the following document
