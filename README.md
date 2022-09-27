@@ -33,6 +33,7 @@ Connect PAL Max properly to the host machine via the ethernet. Select the `Direc
 ### Documentation 
 For rest of the evaluation of the 3D Object Detection and Tracking SDK, please read the 
 - [Code Samples](https://docs.google.com/document/d/e/2PACX-1vR7AxhhOOp9K8PDviGaXRaw3Ui5E7omyL_hnvdsyWF_3dowyrgx8Zmc1mH1FOV3nsmt_HmEuBDpl-ZZ/pub)
+- [ROS Application Note](https://docs.google.com/document/d/e/2PACX-1vSq8_AwNdo-XwKsxcqtMzl6GkLK2woIoKkHmm0plr0ay1SOFUUN-Wwe3A2PqdTDwM8HEQWLLxdJujBC/pub)
 
 ## Method 2
 Run the application directly on Pal Max and interface using the ROS multi-device functionality. Using this method requires no additional installations. Refer the documentation for more details.
